@@ -1,5 +1,4 @@
 const express = require("express");
-
 const exphbs = require("express-handlebars");
 const port = 8000;
 const app = express();
@@ -11,6 +10,14 @@ app.set("view engine", "hbs");
 
 app.get("/", (req, res) => {
   res.render("home");
+});
+
+app.get('/student', (req, res) => { 
+  res.render("student");
+});
+
+app.get('/login', (req, res) => {
+  res.render("login");
 });
 
 app.listen(port, () => {
