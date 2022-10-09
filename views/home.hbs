@@ -1,201 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../public/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-        <title>Availability</title>
-</head>
-<body>
-    <div class="navbar">
-        <div class="page--title">
-            Classrooms
-        </div>
-        <div class="login">
-            <button id="login">
-                Login
-            </button>
-        </div>
+<div class='navbar'>
+  <div class='page--title'>
+    Classrooms
+  </div>
+  <div class='login'>
+    <a href='/login' id='login'>
+      Login
+    </a>
+  </div>
+</div>
+<div class='hero'>
+  <div class='layout--top'>
+    <div class='title'>
+      Available Classrooms
     </div>
-    <div class="hero">
 
-        <div class="layout--top">
-            <div class="title">
-                Available Classrooms
-            </div>
-            <div class="filter--section">
-              <div>
-                <label for="sort">Filter:</label>
-                 <select name="sort">
-                    <option>All</option>
-                    <option>Golden Jubilee - CS</option>
-                    <option>Golden Jubilee - IS</option>
-                    <option>Polymer Science block</option>
-                    <option>Admin block</option>
-                    <option>Environment Block</option>
-                </select> 
-            </div>
-            </div>
-        </div>
-                
-        <div class="layout--bottom">
-            <div class="classDisplay">
-                <div class="displayOne">
-                   <div class="headDisplay">
-                        Time Frame
-                   </div>
-                   <div class="timeSlot">
-                        11:30 - 12:30
-                   </div>
-                </div>
-                <div class="displayTwo">
-                    <div class="headDisplay">
-                        CS001
-                   </div>
-                   <div class="engage">
-                    Engage it
-                   </div>
-                    <div class="icon">
-                    <iconify-icon icon="akar-icons:arrow-down-right" style="color: white;" width="35" height="35"></iconify-icon>                    
-                    </div>
-                </div>
-            </div>
-            <div class="classDisplay">
-                <div class="displayOne">
-                   <div class="headDisplay">
-                        Time Frame
-                   </div>
-                   <div class="timeSlot">
-                        11:30 - 12:30
-                   </div>
-                </div>
-                <div class="displayTwo">
-                    <div class="headDisplay">
-                        CS001
-                   </div>
-                   <div class="engage">
-                    Engage it
-                   </div>
-                    <div class="icon">
-                    <iconify-icon icon="akar-icons:arrow-down-right" style="color: white;" width="35" height="35"></iconify-icon>                    
-                    </div>
-                </div>
-            </div>
-            <div class="classDisplay">
-                <div class="displayOne">
-                   <div class="headDisplay">
-                        Time Frame
-                   </div>
-                   <div class="timeSlot">
-                        11:30 - 12:30
-                   </div>
-                </div>
-                <div class="displayTwo">
-                    <div class="headDisplay">
-                        CS001
-                   </div>
-                   <div class="engage">
-                    Engage it
-                   </div>
-                    <div class="icon">
-                    <iconify-icon icon="akar-icons:arrow-down-right" style="color: white;" width="35" height="35"></iconify-icon>                    
-                    </div>
-                </div>
-            </div>
-            
-            <div class="classDisplay">
-                <div class="displayOne">
-                   <div class="headDisplay">
-                        Time Frame
-                   </div>
-                   <div class="timeSlot">
-                        11:30 - 12:30
-                   </div>
-                </div>
-                <div class="displayTwo">
-                    <div class="headDisplay">
-                        CS001
-                   </div>
-                   <div class="engage">
-                    Engage it
-                   </div>
-                   <div class="icon">
-                    <iconify-icon icon="akar-icons:arrow-down-right" style="color: white;" width="35" height="35"></iconify-icon>                    
-                    </div>
-                </div>
-            </div>
+    <div class='filter--section'>
+      <div>
+        <label for='sort'>Filter:</label>
+        <form action='/' method='post'>
+          <input type='radio' value='Golden Jubilee' name='check' />
+          <label>Golden Jubilee Bhavan</label><br />
+          <input type='radio' value='Polymer Science' name='check' />
+          <label>Polymer Science</label><br />
+          <input type='radio' value='Environment' name='check' />
+          <label>Environment</label><br />
+          <input type='radio' value='Admin' name='check' />
+          <label>Admin</label><br />
+          <button type='submit'>Filter</button>
 
-            <div class="classDisplay">
-                <div class="displayOne">
-                   <div class="headDisplay">
-                        Time Frame
-                   </div>
-                   <div class="timeSlot">
-                        11:30 - 12:30
-                   </div>
-                </div>
-                <div class="displayTwo">
-                    <div class="headDisplay">
-                        CS001
-                   </div>
-                   <div class="engage">
-                    Engage it
-                   </div>
-                   <div class="icon">
-                    <iconify-icon icon="akar-icons:arrow-down-right" style="color: white;" width="35" height="35"></iconify-icon>                    
-                    </div>
-                </div>
-            </div>
-<div class="classDisplay">
-                <div class="displayOne">
-                   <div class="headDisplay">
-                        Time Frame
-                   </div>
-                   <div class="timeSlot">
-                        11:30 - 12:30
-                   </div>
-                </div>
-                <div class="displayTwo">
-                    <div class="headDisplay">
-                        CS001
-                   </div>
-                   <div class="engage">
-                    Engage it
-                   </div>
-                   <div class="icon">
-                    <iconify-icon icon="akar-icons:arrow-down-right" style="color: white;" width="35" height="35"></iconify-icon>                    
-                    </div>
-                </div>
-            </div>
-            <div class="classDisplay">
-                <div class="displayOne">
-                   <div class="headDisplay">
-                        Time Frame
-                   </div>
-                   <div class="timeSlot">
-                        11:30 - 12:30
-                   </div>
-                </div>
-                <div class="displayTwo">
-                    <div class="headDisplay">
-                        CS001
-                   </div>
-                   <div class="engage">
-                    Engage it
-                   </div>
-                   <div class="icon">
-                    <iconify-icon icon="akar-icons:arrow-down-right" style="color: white;" width="35" height="35"></iconify-icon>                    
-                    </div>
-                </div>
-            </div>
-        
-            
-            
-        </div>
+          <!--<select name='sort'>
+            <option>All</option>
+            <option name='gj' value='Golden Jubilee'>Golden Jubilee</option>
+            <option name='ps' value='ps'>Polymer Science block</option>
+            <option name='admin' value='admin'>Admin block</option>
+            <option name='env' value='env'>Environment Block</option>
+          </select> -->
+        </form>
+      </div>
     </div>
-    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
-</body>
-</html>
+  </div>
+  <div class='layout--bottom'>
+    {{#each rows}}
+      <div class='classDisplay'>
+        <div class='displayOne'>
+          <div class='headDisplay'>
+            Time Frame
+          </div>
+          <div class='timeSlot'>
+            {{this.Block}}
+          </div>
+        </div>
+        <div class='displayTwo'>
+          <div class='headDisplay'>
+            {{this.Classroom}}
+          </div>
+
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
