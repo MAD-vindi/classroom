@@ -1,0 +1,60 @@
+<div class='navbar'>
+  <div class='page--title'>
+    Classrooms
+  </div>
+  <div class='login'>
+    <a href='/' id='login'>
+      Logout
+    </a>
+  </div>
+</div>
+<div class='hero'>
+  <div class='layout--top'>
+    <div class='title'>
+      Available Classrooms
+    </div>
+    <div class='filter--section'>
+      <div>
+        <label for='sort'>Filter:</label>
+        <select name='sort'>
+          <option>All</option>
+          <option>Golden Jubilee - CS</option>
+          <option>Golden Jubilee - IS</option>
+          <option>Polymer Science block</option>
+          <option>Admin block</option>
+          <option>Environment Block</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class='layout--bottom'>
+    {{#each status}}
+      <div class='classDisplay'>
+        <div class='displayOne'>
+          <div class='headDisplay'>
+            Time Frame
+          </div>
+          <div class='timeSlot'>
+            {{this.Block}}
+          </div>
+        </div>
+        <div class='displayTwo'>
+          <div class='headDisplay'>
+            {{this.Classroom}}
+          </div>
+          <div class='engage'>
+            Engage it
+          </div>
+          <div class='icon'>
+            <iconify-icon
+              icon='akar-icons:arrow-down-right'
+              style='color: white;'
+              width='35'
+              height='35'
+            ></iconify-icon>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
