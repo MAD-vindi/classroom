@@ -52,7 +52,7 @@ The tech stack used here is,
 ---
 
 ## Final version of the project
-
+Click [here](https://www.figma.com/file/xUNe4RoZlwYStGIOY3cqoq/web-project-1?node-id=0%3A1) for the UI design and prototype of the project.
 
 ![classroom1](https://user-images.githubusercontent.com/108210777/194824416-33211cc3-789a-43e7-b5a6-436bd82784f8.png)
 
