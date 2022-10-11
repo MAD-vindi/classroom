@@ -50,7 +50,7 @@ The tech stack used here is,
 
 -	Look into the CRUD operations in this [video](https://youtu.be/1aXZQcG2Y6I), code in the repository is careful modification of the code that is taught in this video.
 -	Walkthrough [video](https://youtu.be/W8jySpfRUDY) of connecting express server to MySQL.
--	Authentication reference [video](https://youtu.be/ORExt-aYiqo)
+-	Authentication reference [video](https://youtu.be/ORExt-aYiqo).
 ---
 
 ## Final version of the project
