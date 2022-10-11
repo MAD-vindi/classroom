@@ -20,6 +20,8 @@ The tech stack used here is,
 
 ---
 
+### `Before contributing look into `[CONTRIBUTING GUIDELINES](./CONTRIBUTING.md)
+
 ## Prerequisites
 
 >MySQL installed on your system, if not follow this [Link](https://www.youtube.com/watch?v=7S_tz1z_5bA&t=294s) for mac and this [Link](https://www.youtube.com/watch?v=7S_tz1z_5bA&t=294s) for windows
