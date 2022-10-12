@@ -3,8 +3,15 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
+const session = require('express-session');
 const app = express();
 const port = process.env.PORT || 8000;
+
+app.use(session({
+  secret: 'secret',
+  resave: true,
+  saveUninitialized: true
+}));
 
 //Initialing server with public profile
 app.use(express.static('public'));
