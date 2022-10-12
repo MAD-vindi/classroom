@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const { stringify } = require('querystring');
+const {stringify} = require('querystring');
 
 const pool = mysql.createPool({
   connectionLimit: 100,
@@ -10,7 +10,26 @@ const pool = mysql.createPool({
 });
 
 exports.view = (req, res) => {
-  res.render('login');
+  if (req.session.loggedin) {
+    pool.getConnection((err, connection) => {
+      if (err) {
+        throw err;
+      }
+    connection.query(
+      'SELECT * FROM status WHERE Day LIKE ? AND Afternoon LIKE ?',
+      ['Monday', '0'],
+      (err, status) => {
+        if(!err){
+          res.render('update', {status});
+        }else{
+          console.log(err);
+        } 
+      }
+    );
+    });
+  } else {
+    res.render('login');
+  }
 };
 
 exports.form = (req, res) => {
@@ -33,7 +52,9 @@ exports.form = (req, res) => {
               'SELECT * FROM status WHERE Day LIKE ? AND Afternoon LIKE ?',
               ['Monday', '0'],
               (err, status) => {
-                res.render('update', { status });
+                req.session.loggedin = true;
+                req.session.username = username;
+                res.render('update', {status});
               }
             );
           } else {
