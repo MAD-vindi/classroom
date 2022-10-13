@@ -46,6 +46,8 @@ pool.getConnection((err, connection) => {
   res.render("home");
 });*/
 
+
+
 const routes = require('./server/routes/route');
 
 app.get('/', routes);
@@ -54,12 +56,16 @@ app.post('/', routes);
 app.get('/login', routes);
 app.post('/login', routes);
 
+app.get("/logout", routes);
+
 app.get('/update', routes);
 app.post('/updates', routes);
 
 app.get('/success', routes);
 
 app.get('/failure', routes);
+
+
 
 /*
 app.get("/update", (req, res) => {
@@ -76,6 +82,17 @@ app.get("/success", (req, res) => {
 
 app.get("/failure", (req, res) => {
   res.render("failure");
+});
+
+app.get('/logout', (req, res)=>{
+  req.session.destroy(function(err){
+    if(!err){
+      console.log('Destroyed session');
+    }else{
+      console.log(err);
+    }
+    res.redirect('/');
+  });
 });
 */
 app.listen(port, () => {
