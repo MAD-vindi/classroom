@@ -32,4 +32,4 @@ Congratulations 🎉🎉 The GDSC JSSSTU team thanks you ✨✨
 
 Once your PR is merged, your contributions will be publicly visible on the [Classroom repository](https://github.com/gdsc-jssstu/classroom)
 
-Now that you are part of the GDSC JSSSTU community, see how else you can contribute to the [community reopsitories](https://github.com/orgs/gdsc-jssstu/repositories)
+Now that you are part of the GDSC JSSSTU community, see how else you can contribute to the [community repositories](https://github.com/orgs/gdsc-jssstu/repositories)
