@@ -9,6 +9,12 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME,
 });
 
+// getting day and timeframe.
+const {day, timeframe} = require("./dayAndTime");
+
+let Query_0=`SELECT * FROM status where Day LIKE ? AND ${timeframe} LIKE ?`;
+let Query_1=`SELECT * FROM status where Day LIKE ? AND ${timeframe} LIKE ? AND Block LIKE ?`;
+
 exports.format = (req, res) => {
   let sort = req.body.check;
   pool.getConnection((err, connection) => {
@@ -16,9 +22,10 @@ exports.format = (req, res) => {
       throw err;
     }
     console.log('connected to database as ID :' + connection.threadId);
+    if(timeframe !== ""){
     connection.query(
-      `SELECT * FROM status where Day LIKE ? AND Morning LIKE ? AND Block LIKE ?`,
-      ['Monday', '0', sort],
+      Query_1,
+      [day, '0', sort],
       (err, rows) => {
         connection.release();
         if (!err) {
@@ -29,6 +36,9 @@ exports.format = (req, res) => {
         }
       }
     );
+  }else{
+    res.render("home");
+  }
   });
 };
 
@@ -38,9 +48,10 @@ exports.view = (req, res) => {
       throw err;
     }
     console.log('connected to database as ID y :' + connection.threadId);
+    if(timeframe!==""){
     connection.query(
-      `SELECT * FROM status where Day LIKE ? AND Morning LIKE ?`,
-      ['Monday', '0'],
+      Query_0,
+      [day, '0'],
       (err, rows) => {
         connection.release();
         if (!err) {
@@ -51,5 +62,8 @@ exports.view = (req, res) => {
         }
       }
     );
+  }else{
+    res.render("home");
+  }
   });
 };
