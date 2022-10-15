@@ -1,9 +1,13 @@
 // getting day and timeframe.
 
 const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+// getting IST
 const d = new Date();
-let day = weekday[d.getDay()];
-const time = d.getHours();
+const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+const ind = new Date(utc + (3600000*+5.5));
+let day = weekday[ind.getDay()];
+const time = ind.getHours();
 let timeframe;
 
 switch(time){
