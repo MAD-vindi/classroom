@@ -9,15 +9,21 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME,
 });
 
+// getting day and timeframe.
+const {day, timeframe} = require("./dayAndTime");
+
+let Query_0=`SELECT * FROM status where Day LIKE ? AND ${timeframe} LIKE ?`
+
 exports.view = (req, res) => {
   if (req.session.loggedin) {
     pool.getConnection((err, connection) => {
       if (err) {
         throw err;
       }
+    if(timeframe!==""){
     connection.query(
-      'SELECT * FROM status WHERE Day LIKE ? AND Afternoon LIKE ?',
-      ['Monday', '0'],
+      Query_0,
+      [day, '0'],
       (err, status) => {
         if(!err){
           res.render('update', {status});
@@ -26,6 +32,9 @@ exports.view = (req, res) => {
         } 
       }
     );
+  }else{
+    res.render("update");
+  }
     });
   } else {
     res.render('login');
@@ -48,15 +57,19 @@ exports.form = (req, res) => {
         connection.release();
         if (!err) {
           if (rows[0] != undefined) {
+            if(timeframe!==""){
             connection.query(
-              'SELECT * FROM status WHERE Day LIKE ? AND Afternoon LIKE ?',
-              ['Monday', '0'],
+              Query_0,
+              [day, '0'],
               (err, status) => {
                 req.session.loggedin = true;
                 req.session.username = username;
                 res.render('update', {status});
               }
             );
+          }else{
+            res.render("update");
+          }
           } else {
             res.render('login');
           }
