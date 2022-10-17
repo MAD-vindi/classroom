@@ -22,6 +22,18 @@ The tech stack used here is,
 
 ### `Before contributing look into `[CONTRIBUTING GUIDELINES](./CONTRIBUTING.md)
 
+---
+### `Use this as a template for Pull Requests `
+[Pull Request Template](.github/pull_request_template.md)
+### `Use these as templates for Issues Lists `
+[Issueslist_bug](.github/ISSUE_TEMPLATE/bug.yml)
+
+[Issueslist_docs](.github/ISSUE_TEMPLATE/docs.yml)
+
+[Issueslist_featurerequest](.github/ISSUE_TEMPLATE/feature_request.yml)
+
+---
+
 ## Prerequisites
 
 >MySQL installed on your system, if not follow this [Link](https://www.youtube.com/watch?v=7S_tz1z_5bA&t=294s) for mac and this [Link](https://www.youtube.com/watch?v=7S_tz1z_5bA&t=294s) for windows
