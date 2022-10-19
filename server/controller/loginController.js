@@ -16,6 +16,7 @@ let Query_0=`SELECT * FROM status where Day LIKE ? AND ${timeframe} LIKE ?`
 
 exports.view = (req, res) => {
   if (req.session.loggedin) {
+    console.log("logged in through sessions");
     pool.getConnection((err, connection) => {
       if (err) {
         throw err;
@@ -57,19 +58,16 @@ exports.form = (req, res) => {
         connection.release();
         if (!err) {
           if (rows[0] != undefined) {
-            if(timeframe!==""){
             connection.query(
               Query_0,
               [day, '0'],
               (err, status) => {
                 req.session.loggedin = true;
                 req.session.username = username;
+                console.log("sessions created");
                 res.render('update', {status});
               }
             );
-          }else{
-            res.render("update");
-          }
           } else {
             res.render('login');
           }
